@@ -1,0 +1,13 @@
+.home-page{
+    display: flex;
+}
+
+.profile-part{
+    width: 70%;
+    border-right: 2px solid black;
+    padding: 10px;
+}
+
+.compute-part{
+    padding-left: 15px;
+}
