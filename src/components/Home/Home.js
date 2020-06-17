@@ -10,16 +10,22 @@ const Home = () => {
     const allUsers = fakedata.slice(0,16)
     const [users, setUsers] = useState(allUsers);
     
-    
+    const [friend, setFriend] = useState([]);
+    const addFriends = (friends) => {
+        const friendList = [...friend, friends];
+        setFriend(friendList);
+        
+    }
+    console.log(friend)
     return (
         <div className = "home-page">
             <div className = "profile-part">
                 {
-                    users.map( user => <Profile users = {user}></Profile>)
+                    users.map( user => <Profile users = {user} addFriends = {addFriends}></Profile>)
                 }
             </div>
             <div className = "compute-part">
-                <Compute></Compute>
+                <Compute totalFd = {friend}></Compute>
             </div>
         </div>
     );

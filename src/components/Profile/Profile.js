@@ -1,9 +1,11 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import "./Profile.css"
 
 
 const Profile = (props) => {
-    console.log(props.users);
+    
     const {url, nickName, name, email, phone, salary, profession} = (props.users);
     
     return (
@@ -18,7 +20,7 @@ const Profile = (props) => {
                 <h4 className = "blue">Profession: {profession}</h4>
                 <h4 className = "blue">Phone no: {phone}</h4>
                 <h3 className = "salary">Salary: {salary}</h3>
-                <button className = "button">Add friend</button>
+                <button className = "button" onClick = {() => props.addFriends(props.users)}><FontAwesomeIcon icon={faPlus} /> Add friend</button>
             </div>
         </div>
     );
